@@ -2,6 +2,7 @@ KobayashiMaruV1::Application.routes.draw do
   devise_for :users
   resources :pages
   resources :studies
+  root 'pages#home'
   get '/home', to: 'pages#home'
   get '/about', to: 'pages#about'
   get '/fail', to: 'pages#fail'

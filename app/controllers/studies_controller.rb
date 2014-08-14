@@ -1,6 +1,6 @@
 class StudiesController < ApplicationController
   #before_action :authenticate_user!, only: [:create, :update, :new]
-  before_action :admin_required?, only: [:new]
+
 
 
   def new
