@@ -8,10 +8,10 @@ feature 'user signs in', %q{
   } do
 
   scenario 'user enters no credentials' do
-    user = FactoryGirl.create
+    user = FactoryGirl.create(:user)
     visit new_user_session_url
     click_button 'Sign in'
-    expect(page).to eq('/users/sign_in')
+    expect(current_path).to eq('/users/sign_in')
   end
 
   scenario 'user enters invalid credentials' do
