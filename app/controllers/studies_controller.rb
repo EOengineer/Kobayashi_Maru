@@ -40,8 +40,4 @@ class StudiesController < ApplicationController
   def study_params
     params.require(:study).permit(:name, :type, :size, :days_duration)
   end
-
-  def admin_authenticate
-    redirect_to root_path unless user_signed_in? && current_user.is_admin?
-  end
 end

@@ -12,10 +12,15 @@
   </head>
 
   <body>
-    <% flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, class: name %>
-    <% end -%>
-
+<%# Rails flash messages styled for Zurb Foundation 5.0 %>
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+    <div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+      <%= content_tag :div, msg %>
+      <a href="#" class="close">&times;</a>
+    </div>
+  <% end %>
+<% end %>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
