@@ -12,7 +12,7 @@
   </head>
 
   <body>
-<%# Rails flash messages styled for Zurb Foundation 5.0 %>
+    <%# Rails flash messages styled for Zurb Foundation %>
 <% flash.each do |name, msg| %>
   <% if msg.is_a?(String) %>
     <div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
@@ -21,6 +21,7 @@
     </div>
   <% end %>
 <% end %>
+
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
