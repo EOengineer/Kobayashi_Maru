@@ -2,10 +2,11 @@ KobayashiMaruV1::Application.routes.draw do
   devise_for :users
   resources :pages
   resources :studies
+  root 'pages#home'
   get '/home', to: 'pages#home'
   get '/about', to: 'pages#about'
-  get '/fail', to: 'pages#fail'
   get '/protect', to: 'pages#protect'
+  get '/admin', to: 'studies#admin'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

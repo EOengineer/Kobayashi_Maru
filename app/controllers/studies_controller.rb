@@ -1,6 +1,6 @@
 class StudiesController < ApplicationController
-  #before_action :authenticate_user!, only: [:create, :update, :new]
-  before_action :admin_required?, only: [:new]
+  before_action :authenticate_user!, only: [:create, :update, :new]
+  before_action :admin_authenticate, only: :admin
 
 
   def new
@@ -31,6 +31,9 @@ class StudiesController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def admin
   end
 
   protected
