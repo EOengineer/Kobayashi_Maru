@@ -1,7 +1,7 @@
 class Study < ActiveRecord::Base
 
-  has_many :cancer_subtype
-  has_many :status
-  has_many :size
-  has_many :duration
+  belongs_to :cancer_subtype
+  belongs_to :status
+  belongs_to :size
+  belongs_to :duration
 end
