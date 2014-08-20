@@ -38,6 +38,6 @@ class StudiesController < ApplicationController
 
   protected
   def study_params
-    params.require(:study).permit(:name, :type, :size, :days_duration)
+    params.require(:study).permit(:title, :summary, :cancer_subtype_id, :status_id, :duration_id, :size_id)
   end
 end
