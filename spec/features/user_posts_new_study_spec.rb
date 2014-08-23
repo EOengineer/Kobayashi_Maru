@@ -11,12 +11,15 @@ feature 'user posts a new study', %q{
 
   scenario 'authenticated member posts a new study' do
 
-
+    #SETUP
     type = FactoryGirl.create(:cancer_subtype, name: "Inflammatory Breast Cancer")
     status = FactoryGirl.create(:status, name: 'Completed')
     size = FactoryGirl.create(:size, number: '25')
     duration = FactoryGirl.create(:duration, length: '6 months')
+    state = FactoryGirl.create(:state, name: 'Massachusetts')
     user = FactoryGirl.create(:user)
+    starting_count = Study.all.count
+
     visit new_study_path
     expect(current_path).to eq('/users/sign_in')
     expect(page).to have_content('You need to sign in or sign up before continuing.')
@@ -24,6 +27,7 @@ feature 'user posts a new study', %q{
     fill_in 'Password', with: user.password
     click_button 'Sign in'
     expect(current_path).to eq(new_study_path)
+
 
     #cancer info
     select 'Inflammatory Breast Cancer', from: 'Cancer subtype'
@@ -36,7 +40,10 @@ feature 'user posts a new study', %q{
     fill_in 'Summary', with: 'This study was condicted over 6 months in Boston.  It involved monitoring 25 patients for changes under organic diet.'
 
     #location info
-    fill_in 'City', with: 'Boston'
-    select 'MA', from: 'State'
+
+    select 'Massachusetts', from: 'State'
+    click_button 'Submit'
+    expect(Study.all.count).to eq(starting_count + 1)
+    expect(current_path).to eq(study_path(id: '1'))
   end
 end

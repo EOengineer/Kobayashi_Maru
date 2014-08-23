@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe CancerSubtype, :type => :model do
+RSpec.describe State, :type => :model do
   it {should validate_presence_of(:name)}
 end

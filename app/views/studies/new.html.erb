@@ -4,10 +4,11 @@
       <%= simple_form_for @study do |f| %>
       <%= f.association :cancer_subtype, label_method: :name %>
       <%= f.input :title %>
+      <%= f.input :summary %>
       <%= f.association :status, label_method: :name%>
       <%= f.association :size, label_method: :number %>
       <%= f.association :duration, label_method: :length %>
-      <%= f.input :summary %>
+      <%= f.association :state, label_method: :name %>
       <%= f.button :submit, 'Submit' %>
     <% end %>
     </div>

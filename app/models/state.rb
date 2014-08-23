@@ -1,4 +1,4 @@
-class Status < ActiveRecord::Base
+class State < ActiveRecord::Base
   has_many :studies
   validates :name, presence: true
 end
