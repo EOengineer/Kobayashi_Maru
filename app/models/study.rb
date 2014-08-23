@@ -8,4 +8,9 @@ class Study < ActiveRecord::Base
 
   validates :title, presence: true
   validates :summary, presence: true
+  validates :cancer_subtype_id, presence: true
+  validates :status_id, presence: true
+  validates :size_id, presence: true
+  validates :duration_id, presence: true
+  validates :state_id, presence: true
 end
