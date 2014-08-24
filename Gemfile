@@ -40,6 +40,7 @@ group :test, :development do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_girl_rails'
   gem 'pry-rails'
+  gem 'valid_attribute'
 end
 
 group :test do
