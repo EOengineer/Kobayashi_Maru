@@ -33,7 +33,7 @@
           </ul>
           <% end %>
             <li><label>Navigation</label></li>
-            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Home", '/home' %></li>
             <li><%= link_to 'About Us', '/about' %></li>
           </ul>
           <% if user_signed_in? %>
@@ -54,7 +54,7 @@
         <%# Rails flash messages styled for Zurb Foundation %>
         <% flash.each do |name, msg| %>
           <% if msg.is_a?(String) %>
-            <div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+            <div data-alert class="alert-box <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
               <%= content_tag :div, msg %>
               <a href="#" class="close">&times;</a>
             </div>
