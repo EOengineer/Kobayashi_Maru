@@ -54,7 +54,7 @@ $body-font-weight: $font-weight-normal;
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #008CBA;
+$primary-color: #0f5daf;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -63,7 +63,7 @@ $primary-color: #008CBA;
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
-$global-rounded: 0px;
+//$global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
 // $shiny-edge-size: 0 1px 0;
@@ -357,8 +357,8 @@ $alert-bottom-margin: rem-calc(5);
 // $button-font-color-alt: #333;
 // $button-font-tny: rem-calc(11);
 // $button-font-sml: rem-calc(13);
-// $button-font-med: rem-calc(16);
-// $button-font-lrg: rem-calc(20);
+$button-font-med: rem-calc(28);
+$button-font-lrg: rem-calc(26);
 // $button-font-weight: $font-weight-normal;
 // $button-font-align: center;
 
@@ -1332,3 +1332,4 @@ $sub-nav-active-cursor: default;
 // $range-slider-handle-cursor: pointer;
 
 @import 'foundation';
+

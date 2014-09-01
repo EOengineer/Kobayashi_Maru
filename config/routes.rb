@@ -8,6 +8,7 @@ KobayashiMaruV1::Application.routes.draw do
   get '/protect', to: 'pages#protect'
   get '/admin', to: 'studies#admin'
 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

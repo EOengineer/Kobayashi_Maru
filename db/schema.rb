@@ -11,18 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140810204611) do
+ActiveRecord::Schema.define(version: 20140823153329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "studies", force: true do |t|
-    t.string   "name",          null: false
-    t.string   "type",          null: false
-    t.integer  "size",          null: false
-    t.integer  "days_duration", null: false
+  create_table "cancer_subtypes", force: true do |t|
+    t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "durations", force: true do |t|
+    t.string   "length"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sizes", force: true do |t|
+    t.string   "number",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "states", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "statuses", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "studies", force: true do |t|
+    t.string  "title"
+    t.text    "summary"
+    t.integer "cancer_subtype_id"
+    t.integer "status_id"
+    t.integer "duration_id"
+    t.integer "size_id"
+    t.integer "state_id"
   end
 
   create_table "users", force: true do |t|

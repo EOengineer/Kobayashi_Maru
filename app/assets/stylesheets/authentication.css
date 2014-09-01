@@ -1,8 +1,11 @@
+@import 'foundation_and_overrides'
+
  form {
   width: 300px;
 }
 
 .border {
+  background-color: white;
   border: 1px solid black;
   padding: 20px 20px 20px 20px;
   margin: 50px auto 10px auto;
@@ -11,4 +14,13 @@
 
 .alert {
   background: none;
+}
+
+.sessions-new {
+  height:100%;
+
+}
+
+.thin {
+  padding: 15px 80px 15px 80px;
 }

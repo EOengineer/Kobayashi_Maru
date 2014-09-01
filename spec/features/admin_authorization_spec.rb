@@ -8,7 +8,7 @@ feature 'admin level authorization', %q{
   } do
 
 
-  scenario 'authenticated admin accesses member page' do
+  scenario 'unauthenticated admin accesses member page' do
     user = FactoryGirl.create(:user, role: 'admin')
     visit new_study_path
     expect(current_path).to eq('/users/sign_in')

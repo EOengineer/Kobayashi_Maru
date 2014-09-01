@@ -1,7 +1,61 @@
-<%= simple_form_for @study do |f| %>
-  <%= f.input :name %>
-  <%= f.input :type %>
-  <%= f.input :size %>
-  <%= f.input :days_duration %>
-  <%= f.submit "Submit" %>
-<% end %>
+<div>
+  <div class="row">
+    <div class="small-12 columns text-center">
+      <h1>Collaboration starts here.</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-10 medium-7 small-centered columns">
+      <%= image_tag("blue-cells.png") %>
+    </div>
+  </div>
+  <div class="small-0 medium-2 large-3 columns">
+  </div>
+  <div class="small-12 medium-8 large-6 small-centered columns">
+    <div class="small-12 small-centered columns">
+      <%= simple_form_for @study do |f| %>
+        <div class="row">
+          <div class="large-9 columns">
+            <%= f.association :cancer_subtype, label_method: :name %>
+          </div>
+          <div class="large-3 columns">
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-9 columns">
+            <%= f.input :title %>
+        </div>
+        <div class="large-3 columns">
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-6 columns">
+            <%= f.association :status, label_method: :name%>
+          </div>
+          <div class="small-6 columns">
+            <%= f.association :size, label_method: :number %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-6 columns">
+          <%= f.association :duration, label_method: :length %>
+        </div>
+        <div class="small-6 columns">
+          <%= f.association :state, label_method: :name %>
+        </div>
+      </div>
+      <div class="row">
+          <div class="small-12 columns">
+            <%= f.input :summary %>
+          </div>
+        </div>
+      <div class='text-center'>
+          <%= f.button :submit, 'Submit', class: 'thin' %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+    <div class="small-0 medium-2 large-3 columns">
+    </div>
+  </div>
+</div>
