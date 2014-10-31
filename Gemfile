@@ -41,6 +41,7 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'valid_attribute'
+  gem 'database_cleaner'
 end
 
 group :test do

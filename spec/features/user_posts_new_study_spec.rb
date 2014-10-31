@@ -7,8 +7,6 @@ feature 'user posts a new study', %q{
   so that others will be aware of my work
   } do
 
-
-
   scenario 'authenticated member posts a new study' do
 
     #SETUP
@@ -41,7 +39,7 @@ feature 'user posts a new study', %q{
     #location info
     select 'Massachusetts', from: 'State'
     click_button 'Submit'
-    expect(current_path).to eq(study_path(id: Study.all.count))
-    expect(Study.all.count).to eq(starting_count + 1)
+    expect(current_path).to eql("/studies/#{starting_count + 1}")
+    expect(starting_count).to eq(Study.all.count - 1)
   end
 end
