@@ -7,9 +7,6 @@ class User < ActiveRecord::Base
          has_many :studies
 
 
-
-
-
   def is_admin?
     role == 'admin'
   end

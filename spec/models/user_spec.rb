@@ -1,6 +1,8 @@
 require 'rails_helper'
 
-describe 'admin checks' do
+RSpec.describe User, :type => :model do
+
+# describe 'admin checks' do
   it 'is not an admin if the role is not admin' do
     user = FactoryGirl.build(:user)
     expect(user.is_admin?).to be false
@@ -10,4 +12,6 @@ describe 'admin checks' do
     user = FactoryGirl.build(:user, role: 'admin')
     expect(user.is_admin?).to be true
   end
+
+  it {should have_many(:studies)}
 end
