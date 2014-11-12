@@ -2,6 +2,11 @@ KobayashiMaruV1::Application.routes.draw do
   devise_for :users
   resources :pages
   resources :studies
+
+  namespace :admin do
+    resources :states
+  end
+
   root 'pages#home'
   get '/home', to: 'pages#home'
   get '/about', to: 'pages#about'
