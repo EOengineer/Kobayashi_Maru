@@ -5,6 +5,10 @@ KobayashiMaruV1::Application.routes.draw do
 
   namespace :admin do
     resources :states
+    resources :sizes
+    resources :durations
+    resources :statuses
+    resources :cancer_subtypes
   end
 
   root 'pages#home'

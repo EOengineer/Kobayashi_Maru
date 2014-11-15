@@ -1,4 +1,5 @@
 class Admin::StatesController < ApplicationController
+  before_action :admin_authenticate
 
   def index
     @states = State.all
