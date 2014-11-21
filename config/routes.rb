@@ -2,6 +2,11 @@ KobayashiMaruV1::Application.routes.draw do
   devise_for :users
   resources :pages
   resources :studies
+  resources :states, only: [:index, :show]
+  resources :sizes, only: [:index, :show]
+  resources :durations, only: [:index, :show]
+  resources :cancer_subtypes, only: [:index, :show]
+  resources :statuses, only: [:index, :show]
 
   namespace :admin do
     resources :states

@@ -1,0 +1,7 @@
+
+<ul>
+<% @states.each_with_index do |state, index| %>
+  <li><%= link_to "#{index + 1}: #{state.name}", state_path(state) %></li>
+<% end %>
+</ul>
+
