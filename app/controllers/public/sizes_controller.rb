@@ -1,4 +1,4 @@
-class SizesController < ApplicationController
+class Public::SizesController < ApplicationController
 
 
   def index

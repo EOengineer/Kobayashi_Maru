@@ -16,13 +16,13 @@ feature 'user posts a new study', %q{
     duration = FactoryGirl.create(:duration, length: '6 months')
     state = FactoryGirl.create(:state, name: 'Massachusetts')
     user = FactoryGirl.create(:user)
-    visit new_study_path
+    visit new_user_study_path
     expect(current_path).to eq('/users/sign_in')
     expect(page).to have_content('You need to sign in or sign up before continuing.')
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
     click_button 'Sign in'
-    expect(current_path).to eq(new_study_path)
+    expect(current_path).to eq(new_user_study_path)
 
 
     #cancer info
@@ -39,7 +39,7 @@ feature 'user posts a new study', %q{
     #location info
     select 'Massachusetts', from: 'State'
     click_button 'Submit'
-    expect(current_path).to eql("/studies/#{starting_count + 1}")
+    expect(current_path).to eql("/user/studies/#{starting_count + 1}")
     expect(starting_count).to eq(Study.all.count - 1)
   end
 end

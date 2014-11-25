@@ -1,12 +1,6 @@
 KobayashiMaruV1::Application.routes.draw do
   devise_for :users
-  resources :pages
-  resources :studies
-  resources :states, only: [:index, :show]
-  resources :sizes, only: [:index, :show]
-  resources :durations, only: [:index, :show]
-  resources :cancer_subtypes, only: [:index, :show]
-  resources :statuses, only: [:index, :show]
+
 
   namespace :admin do
     resources :states
@@ -16,11 +10,27 @@ KobayashiMaruV1::Application.routes.draw do
     resources :cancer_subtypes
   end
 
-  root 'pages#home'
-  get '/home', to: 'pages#home'
-  get '/about', to: 'pages#about'
-  get '/protect', to: 'pages#protect'
-  get '/admin', to: 'studies#admin'
+  namespace :user do
+    resources :studies
+    resources :cancer_subtypes
+  end
+
+  namespace :public do
+    resources :pages
+    resources :studies, only: [:index, :show]
+    resources :states, only: [:index, :show]
+    resources :sizes, only: [:index, :show]
+    resources :durations, only: [:index, :show]
+    resources :cancer_subtypes, only: [:index, :show]
+    resources :statuses, only: [:index, :show]
+  end
+
+
+
+  root 'public/pages#index'
+  # get '/about', to: 'pages#about'
+  # get '/protect', to: 'pages#protect'
+  # get '/admin', to: 'studies#admin'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

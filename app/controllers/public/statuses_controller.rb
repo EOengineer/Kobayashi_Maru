@@ -1,4 +1,4 @@
-class StatusesController < ApplicationController
+class Public::StatusesController < ApplicationController
 
   def index
     @statuses = Status.all

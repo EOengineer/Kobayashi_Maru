@@ -1,0 +1,3 @@
+<% @durations.each do |duration| %>
+  <li><%= link_to "#{duration.id}. #{duration.length}", public_duration_path(duration) %>
+<% end %>

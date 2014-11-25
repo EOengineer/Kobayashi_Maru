@@ -1,4 +1,4 @@
-<%= simple_form_for @size do |f| %>
+<%= simple_form_for [:admin, @size] do |f| %>
   <%= f.input :number %>
   <%= f.button :submit, 'Submit' %>
 <% end %>

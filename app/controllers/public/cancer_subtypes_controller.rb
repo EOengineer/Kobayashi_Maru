@@ -1,4 +1,4 @@
-class CancerSubtypesController < ApplicationController
+class Public::CancerSubtypesController < ApplicationController
 
   def index
     @cancer_subtypes = CancerSubtype.all

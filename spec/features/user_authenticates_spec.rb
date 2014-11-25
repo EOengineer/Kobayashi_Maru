@@ -36,14 +36,14 @@ feature 'user signs in', %q{
 
   scenario 'unauthenticated user visits member only area' do
     user = FactoryGirl.create(:user)
-    visit new_study_url
+    visit new_user_study_url
     expect(current_path).to eq('/users/sign_in')
     expect(page).to have_content('You need to sign in or sign up before continuing.')
   end
 
   scenario 'unauthenticated user attempts to post a new study' do
     user = FactoryGirl.create(:user)
-    visit new_study_url
+    visit new_user_study_url
     expect(current_path).to eq('/users/sign_in')
     expect(page).to have_content('You need to sign in or sign up before continuing.')
   end

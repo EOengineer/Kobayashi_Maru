@@ -1,4 +1,4 @@
 <h2> This is where all the studies should show up </h2>
 <% @studies.each do |study| %>
-  <li><%= link_to "#{study.id}. #{study.title.capitalize}", study_path(study) %></li>
+  <li><%= link_to "#{study.id}. #{study.title.capitalize}", public_study_path(study) %></li>
 <% end %>

@@ -1,0 +1,3 @@
+<% @user_studies.each do |user_study| %>
+  <%= link_to "#{user_study.title}", user_study_path(user_study) %>
+<% end %>

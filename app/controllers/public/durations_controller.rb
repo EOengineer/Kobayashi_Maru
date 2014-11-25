@@ -1,4 +1,4 @@
-class DurationsController < ApplicationController
+class Public::DurationsController < ApplicationController
 
   def index
     @durations = Duration.all

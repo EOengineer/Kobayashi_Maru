@@ -13,7 +13,7 @@
   </div>
   <div class="small-12 medium-8 large-6 small-centered columns">
     <div class="small-12 small-centered columns">
-      <%= simple_form_for @study do |f| %>
+      <%= simple_form_for [:user, @study] do |f| %>
         <div class="row">
           <div class="large-9 columns">
             <%= f.association :cancer_subtype, label_method: :name %>

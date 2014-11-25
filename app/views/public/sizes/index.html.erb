@@ -1,0 +1,4 @@
+<h2>All the sizes.</h2>
+<% @sizes.each do |size| %>
+  <li><%= link_to "#{size.id}. #{size.number}", public_size_path(size) %></li>
+<% end %>
