@@ -1,8 +1,10 @@
 class User::StudiesController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :update, :new]
+  before_action :authenticate_user!
 
   def index
     @user_studies = Study.where(user_id: current_user.id)
+
+    render json: @user_studies
   end
 
   def new

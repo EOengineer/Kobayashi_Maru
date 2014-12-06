@@ -8,14 +8,14 @@ class Public::StudiesController < ApplicationController
   def show
     @study = Study.find(params[:id])
 
-    #render json: @study
+    render json: @study
 
   end
 
   def index
     @studies = Study.all
 
-    #render json: @studies
+    render json: @studies
 
   end
 

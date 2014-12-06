@@ -2,6 +2,12 @@ class Public::StatesController < ApplicationController
 
   def index
     @states = State.all
+# binding.pry
+    test = []
+      @states.each do |state|
+      test << state if state.studies[0].present?
+    end
+    render json: test
   end
 
 

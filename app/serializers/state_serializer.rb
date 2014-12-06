@@ -1,5 +1,9 @@
 class StateSerializer < ActiveModel::Serializer
-  attributes :id, :name
+  attributes :name
   has_many :studies
-  url :state
+
+  # def what?
+  #   binding.pry
+  #   Study
+  # end
 end
