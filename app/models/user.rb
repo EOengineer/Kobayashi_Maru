@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
          has_many :studies, dependent: :nullify
+         has_many :user_profiles
 
 
   def is_admin?

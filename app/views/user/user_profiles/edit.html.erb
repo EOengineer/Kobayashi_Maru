@@ -1,0 +1,10 @@
+<%= simple_form_for [:user, @user_profile] do |f| %>
+  <%= f.input :company %>
+  <%= f.input :about %>
+  <%= f.input :mission %>
+  <%= f.input :city %>
+  <%= f.input :state, collection: State.all %>
+  <%= f.input :contact %>
+  <%= f.association :user, as: :hidden, value: current_user.id %>
+  <%= f.submit 'Submit', class: 'button' %>
+<% end %>

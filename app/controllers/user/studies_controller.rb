@@ -4,6 +4,7 @@ class User::StudiesController < ApplicationController
   def index
     @user_studies = Study.where(user_id: current_user.id)
 
+    render html: @user_studies
     render json: @user_studies
   end
 

@@ -13,6 +13,7 @@ KobayashiMaruV1::Application.routes.draw do
   namespace :user do
     resources :studies
     resources :cancer_subtypes
+    resources :user_profiles
   end
 
   namespace :public do
