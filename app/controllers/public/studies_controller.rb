@@ -5,20 +5,10 @@ class Public::StudiesController < ApplicationController
 
   def index
     @studies = Study.all
-
-    respond_to do |format|
-      format.html
-      format.json {render json: @studies, root: false}
-    end
   end
 
   def show
     @study = Study.find(params[:id])
-
-    respond_to do |format|
-      format.html
-      format.json {render json: @study}
-    end
   end
 
 
@@ -30,9 +20,4 @@ class Public::StudiesController < ApplicationController
     params.require(:study).permit(:title, :summary, :cancer_subtype_id, :status_id, :duration_id, :size_id, :state_id, :user_id)
   end
 
-  def default_serializer_options
-    {
-      root: false
-    }
-  end
 end
