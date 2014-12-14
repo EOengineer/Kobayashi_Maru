@@ -13,6 +13,7 @@ KobayashiMaruV1::Application.routes.draw do
   namespace :user do
     resources :studies
     resources :cancer_subtypes
+    resources :user_profiles
   end
 
   namespace :public do
@@ -25,13 +26,18 @@ KobayashiMaruV1::Application.routes.draw do
     resources :statuses, only: [:index, :show]
   end
 
+  namespace :api do
+    namespace :v1 do
+      get :sign_in, :to => 'api#create_session'
+      resources :states
+      resources :cancer_subtypes
+      get '/studies/*attribute' => 'studies#index'
+    end
+  end
+
 
 
   root 'public/pages#index'
-  # get '/about', to: 'pages#about'
-  # get '/protect', to: 'pages#protect'
-  # get '/admin', to: 'studies#admin'
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
