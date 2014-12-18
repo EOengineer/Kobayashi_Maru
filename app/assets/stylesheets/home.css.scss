@@ -1,18 +1,12 @@
 @import "foundation";
-.blue {
-  background-color: black;
-  width: 50%;
-  padding: 0px;
-  height: 300px;
 
-  img {
-    margin-left: 0%;
+.pages-index {
+  @media #{$small-only} {
+    img {
+      width: 100%;
+    }
+    .button {
+      width: 100%;
+    }
   }
-
-    a:link {
-    font-size: 2em;
-    margin: 0 auto;
-    margin-top: 25%;
-  }
-
 }

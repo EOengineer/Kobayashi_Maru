@@ -1,34 +1,34 @@
-<div class="off-canvas-wrap menu-icon" data-offcanvas>
-      <div class="inner-wrap">
-        <nav class="tab-bar">
-          <section class="left-small">
-            <a class="left-off-canvas-toggle menu-icon" href="#"><span>Menu</span></a>
-          </section>
+<div class="fixed">
+  <nav class='top-bar' data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="#">Research App</a></h1>
+      </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
 
-        <a class="left-off-canvas-toggle" href="#" ></a>
-        </nav>
-        <!-- Off Canvas Menu -->
-        <aside class="left-off-canvas-menu">
-            <!-- whatever you want goes here -->
-          <ul class="off-canvas-list">
-            <% unless user_signed_in? %>
-          <%= render 'shared/join_nav' %>
-          <% end %>
-            <%= render 'shared/about_nav' %>
-          </ul>
-          <% if user_signed_in? %>
-            <%= render 'shared/user_nav_options' %>
-          <% end %>
-          <%= render 'shared/public_nav_options' %>
-        </aside>
+    <% unless user_signed_in? %>
+      <section class="top-bar-section">
+        <%= render 'shared/join_nav' %>
+      </section>
+    <% end %>
 
-        <%= render 'shared/errors' %>
+    <section class="top-bar-section">
+      <%= render 'shared/about_nav' %>
+    </section>
 
-        <%= yield %>
-        <%= javascript_include_tag "application" %>
+    <% if user_signed_in? %>
+      <section class="top-bar-section">
+        <%= render 'shared/user_nav_options' %>
+      </section>
+    <% end %>
 
-      <!-- close the off-canvas menu -->
-      <a class="exit-off-canvas"></a>
+    <section class="top-bar-section">
+      <%= render 'shared/public_nav_options' %>
+    </section>
+  </nav>
+</div>
 
-      </div>
-    </div>
+
+
