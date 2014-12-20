@@ -31,7 +31,9 @@ KobayashiMaruV1::Application.routes.draw do
       get :sign_in, :to => 'api#create_session'
       resources :states
       resources :cancer_subtypes
-      get '/studies/*attribute' => 'studies#index'
+      get '/studies' => 'studies#index'
+      get '/studies/:id' => 'studies#show'
+      get '/studies/*group' => 'studies#index'
     end
   end
 
